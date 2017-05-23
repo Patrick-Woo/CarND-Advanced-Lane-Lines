@@ -25,6 +25,7 @@ The goals / steps of this project are the following:
 [image4]: ./output_images/img4.png "Warp Example"
 [image5]: ./output_images/img5.png "Fit Visual"
 [image6]: ./output_images/img6.png "Output"
+[image7]: ./output_images/img7.jpg "Discussion"
 [video1]: ./output_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -109,4 +110,27 @@ I implemented this step in part 6 in my code in the function `drawline`.  Here i
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
 Here's a [link to my video result](./output_video.mp4)
+
+
+### Discussion
+
+#### 1. Briefly discuss any problems / issues you faced in your implementation of this project. Where will your pipeline likely fail? What could you do to make it more robust?
+
+
+1).I used the color space and sobel x filter to identify the yellow and whiter lane lines well. However, if there are lane lines with other colors such as green, red and blue, this pipeline might fail to perform so well.
+
+For example,  there are bus-only lanes in my city, paved with green and have chinese words on them. Also, I guess it is hard for this algorithmn to judge whether it is a part of a word on the road or a lane line.
+
+![alt text][image7]
+
+Further, I will attempt others appoaches that can help me perform the lane lines finding, such as Deep learning method which is not rule-based and can generilize better in a wide range of situations/colors/shapes. 
+
+2). In some cases, I got right and left curvatures with different directions. See the image below as reference. This is against the common sence and defintely wrong. Further, I will modify the sanity check function to fix this.
+
+![alt text][image6]
+
+
+
+
+
  
